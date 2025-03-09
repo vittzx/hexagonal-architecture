@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: Hexagonal-Architecture-Learning
+
+logging:
