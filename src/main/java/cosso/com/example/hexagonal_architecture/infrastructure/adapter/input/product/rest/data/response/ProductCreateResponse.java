@@ -1,14 +1,15 @@
-package cosso.com.example.hexagonal_architecture.infrastructure.adapter.input.product.rest.data.request;
+package cosso.com.example.hexagonal_architecture.infrastructure.adapter.input.product.rest.data.response;
+
 
 import lombok.*;
 
 import java.math.BigInteger;
 
-@Builder
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class ProductCreateResponse {
 
     private BigInteger id;
