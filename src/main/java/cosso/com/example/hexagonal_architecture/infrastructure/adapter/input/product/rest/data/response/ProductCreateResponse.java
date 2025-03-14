@@ -12,7 +12,7 @@ import java.math.BigInteger;
 @Builder
 public class ProductCreateResponse {
 
-    private BigInteger id;
+    private Long id;
     private String name;
     private String description;
 }
