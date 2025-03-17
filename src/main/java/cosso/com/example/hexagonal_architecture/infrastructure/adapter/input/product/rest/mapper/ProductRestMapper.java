@@ -6,25 +6,14 @@ import cosso.com.example.hexagonal_architecture.infrastructure.adapter.input.pro
 import cosso.com.example.hexagonal_architecture.infrastructure.adapter.input.product.rest.data.response.ProductCreateResponse;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.mapstruct.Mapper;
 import org.springframework.stereotype.Component;
 
-@Component
-@RequiredArgsConstructor
-public class ProductRestMapper {
+@Mapper
+public interface ProductRestMapper {
 
-    public Product toProduct(ProductCreateRequest productCreateRequest){
-        return Product.builder()
-                .name(productCreateRequest.getName())
-                .description(productCreateRequest.getDescription())
-                .build();
-    }
+    Product toProduct(ProductCreateRequest productCreateRequest);
 
-    public ProductCreateResponse toProductCreateResponse(Product product){
-        return ProductCreateResponse.builder()
-                .id(product.getId())
-                .name(product.getName())
-                .description(product.getDescription())
-                .build();
-    }
+    ProductCreateResponse toProductCreateResponse(Product product);
 
 }

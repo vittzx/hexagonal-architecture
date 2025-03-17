@@ -11,24 +11,12 @@
 	<groupId>cosso.com.example</groupId>
 	<artifactId>Hexagonal-Architecture-Learning</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Hexagonal-Architecture-Learning</name>
-	<description>Creating a POC for hexagonal Architectur </description>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
+	<name>poc-hexagonal_architecture</name>
+	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 		<org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+		<lombok.version>1.18.22</lombok.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -84,7 +72,7 @@
 						</path>
 						<path>
 							<groupId>org.mapstruct</groupId>
-							<artifactId>mapstruct</artifactId>
+							<artifactId>mapstruct-processor</artifactId>
 							<version>${org.mapstruct.version}</version>
 						</path>
 					</annotationProcessorPaths>

@@ -32,7 +32,7 @@ public class ProductRestController {
         product = this.createProductUseCase.createProduct(product);
 
         ProductCreateResponse response = productRestMapper.toProductCreateResponse(product);
-        log.debug("STARTED POST v1/products: {}", productCreateRequestBody);
+        log.debug("FINISHED POST v1/products: {}", productCreateRequestBody);
         return ResponseEntity.status(201).body(response);
     }
 

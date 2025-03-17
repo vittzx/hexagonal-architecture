@@ -16,5 +16,5 @@ spring:
 
 logging:
   level:
-    cosso.example.hexagonal_architecture: debug
+    cosso.com.example.hexagonal_architecture: debug
 

@@ -4,14 +4,19 @@ import cosso.com.example.hexagonal_architecture.application.port.input.CreatePro
 import cosso.com.example.hexagonal_architecture.application.port.output.ProductOutputPort;
 import cosso.com.example.hexagonal_architecture.domain.model.Product;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
+@Service
+@Slf4j
 public class ProductService implements CreateProductUseCase {
-
-    private final ProductOutputPort productOutputPort;
 
     @Override
     public Product createProduct(Product product) {
-        return productOutputPort.saveProduct(product);
+        log.debug("[ProductService] Creating product {}", product);
+        product.setId(Long.parseLong("1"));
+        log.debug("[ProductService] Product created {}", product);
+        return product;
     }
 }
