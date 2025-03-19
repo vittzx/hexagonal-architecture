@@ -12,10 +12,12 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class ProductService implements CreateProductUseCase {
 
+    private final ProductOutputPort productOutputPort;
+
     @Override
     public Product createProduct(Product product) {
         log.debug("[ProductService] Creating product {}", product);
-        product.setId(Long.parseLong("1"));
+        product = this.productOutputPort.saveProduct(product);
         log.debug("[ProductService] Product created {}", product);
         return product;
     }
