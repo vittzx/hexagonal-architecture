@@ -28,9 +28,7 @@ public class ProductRestController {
     public ResponseEntity<ProductCreateResponse> createProduct(@RequestBody @Valid ProductCreateRequest productCreateRequestBody){
         log.debug("STARTED POST v1/products: {}", productCreateRequestBody);
         Product product = productRestMapper.toProduct(productCreateRequestBody);
-
         product = this.createProductUseCase.createProduct(product);
-
         ProductCreateResponse response = productRestMapper.toProductCreateResponse(product);
         log.debug("FINISHED POST v1/products: {}", productCreateRequestBody);
         return ResponseEntity.status(201).body(response);

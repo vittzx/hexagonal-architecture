@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-    @Table(name = "PRODUTOS")
+@Table(name = "PRODUTOS")
 public class ProductEntity {
 
 
