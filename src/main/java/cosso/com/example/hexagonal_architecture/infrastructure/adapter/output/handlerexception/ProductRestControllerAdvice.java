@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import java.time.LocalDateTime;
-
 import static cosso.com.example.hexagonal_architecture.application.utils.MessageConstants.INTERNAL_SERVER_ERROR;
 
 @Slf4j
@@ -23,7 +21,7 @@ public class ProductRestControllerAdvice extends ResponseEntityExceptionHandler 
 
     @ExceptionHandler(value = Exception.class)
     public ResponseEntity<Object> handleGeneralException(final Exception ex, final WebRequest request){
-        log.debug("Handling Exception {}", ex.getMessage());
+        log.error("Handling Exception {}", ex.getMessage());
         final ExceptionResponse exResponse = new ExceptionResponse(INTERNAL_SERVER_ERROR);
         return ResponseEntity.internalServerError().body(exResponse);
     }
