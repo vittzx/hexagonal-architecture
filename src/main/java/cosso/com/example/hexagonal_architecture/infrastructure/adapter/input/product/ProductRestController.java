@@ -1,6 +1,7 @@
 package cosso.com.example.hexagonal_architecture.infrastructure.adapter.input.product;
 
 import cosso.com.example.hexagonal_architecture.application.port.input.CreateProductUseCase;
+import cosso.com.example.hexagonal_architecture.application.port.input.GetProductUseCase;
 import cosso.com.example.hexagonal_architecture.domain.model.Product;
 import cosso.com.example.hexagonal_architecture.infrastructure.adapter.input.product.rest.data.request.ProductCreateRequest;
 import cosso.com.example.hexagonal_architecture.infrastructure.adapter.input.product.rest.data.response.ProductCreateResponse;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 public class ProductRestController {
 
     private final CreateProductUseCase createProductUseCase;
+    private final GetProductUseCase getProductUseCase;
 
     private final ProductRestMapper productRestMapper;
 
@@ -35,8 +37,8 @@ public class ProductRestController {
     @GetMapping("/{id}")
     public ResponseEntity<ProductQueryResponse> getProductById(@PathVariable final Long id){
         log.debug("STARTED GET v1/products/{}", id);
+        Product productFound = this.getProductUseCase.getProductById(id);
         log.debug("FINISHED GET v1/products/{}", id);
-
         return null;
     }
 
