@@ -9,12 +9,10 @@ import java.time.LocalDateTime;
 @Builder
 public class ExceptionResponse {
 
-    private String time;
     private String status;
     private String message;
 
     public ExceptionResponse(String status, Object... args){
-        this.time = LocalDateTime.now().toString();
         this.status = status;
         this.message = new MessageConfig().getMessage(status, args);
     }
