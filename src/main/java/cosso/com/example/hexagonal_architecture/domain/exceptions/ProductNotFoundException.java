@@ -6,8 +6,8 @@ import org.springframework.http.HttpStatus;
 public class ProductNotFoundException extends RestException {
 
     public ProductNotFoundException(ExceptionResponse ex) {
-        super(ex.getStatus(), ex.getMessage());
-        }
+        super(ex.getStatus(), ex.getMessage(), ex);
+    }
 
     @Override
     public HttpStatus getStatusCode() {

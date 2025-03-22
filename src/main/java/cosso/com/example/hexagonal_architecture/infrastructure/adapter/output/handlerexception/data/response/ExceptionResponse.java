@@ -3,7 +3,7 @@ package cosso.com.example.hexagonal_architecture.infrastructure.adapter.output.h
 import cosso.com.example.hexagonal_architecture.infrastructure.adapter.config.MessageConfig;
 import lombok.*;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
@@ -14,7 +14,7 @@ public class ExceptionResponse {
     private String message;
 
     public ExceptionResponse(String status, Object... args){
-        this.time = LocalDate.now().toString();
+        this.time = LocalDateTime.now().toString();
         this.status = status;
         this.message = new MessageConfig().getMessage(status, args);
     }

@@ -40,7 +40,8 @@ public class ProductRestController {
         log.debug("STARTED GET v1/products/{}", id);
         Product productFound = this.getProductUseCase.getProductById(id);
         log.debug("FINISHED GET v1/products/{}", id);
-        return null;
+        ProductQueryResponse response = this.productRestMapper.toProductQueryResponse(productFound);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
 
