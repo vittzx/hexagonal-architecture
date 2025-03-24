@@ -58,10 +58,10 @@ public class ProductRestControllerAdvice extends ResponseEntityExceptionHandler 
     }
 
     private ResponseEntity<Object> createErrorResponse(HttpStatus status, ExceptionResponse body){
-        return ResponseEntity.status(status).body(new ResponseErrorMessage(REQUEST_STATUS.FAIL, body));
+        return ResponseEntity.status(status).body(new ResponseErrorMessage(body));
     }
 
     private ResponseEntity<Object> createErrorResponse(HttpStatus status, List<ExceptionResponse> body){
-        return ResponseEntity.status(status).body(new ResponseErrorMessage(REQUEST_STATUS.FAIL, body));
+        return ResponseEntity.status(status).body(new ResponseErrorMessage(body));
     }
 }

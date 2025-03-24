@@ -31,7 +31,9 @@ public class ProductPersistenceAdapter implements ProductOutputPort {
 
     @Override
     public Optional<Product> getProductById(Long id) {
+        log.debug("[ProductPersistenceAdapter] Finding product by id {}", id);
         final Optional<ProductEntity> productFoundedById = productRepository.findById(id);
+        log.debug("[ProductPersistenceAdapter] Returning product searched");
         return productFoundedById.isPresent() ? Optional.of(productEntityMapper.toProduct(productFoundedById.get())) : Optional.empty();
     }
 }

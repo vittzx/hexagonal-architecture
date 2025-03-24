@@ -17,15 +17,15 @@ public class ResponseErrorMessage {
     private REQUEST_STATUS status;
     private List<ExceptionResponse> errors;
 
-    public ResponseErrorMessage(REQUEST_STATUS status, List<ExceptionResponse> errors) {
+    public ResponseErrorMessage(List<ExceptionResponse> errors) {
         this.time = LocalDateTime.now().toString();
-        this.status = status;
+        this.status = REQUEST_STATUS.FAIL;
         this.errors = errors;
     }
 
-    public ResponseErrorMessage(REQUEST_STATUS status, ExceptionResponse error) {
+    public ResponseErrorMessage(ExceptionResponse error) {
         this.time = LocalDateTime.now().toString();
-        this.status = status;
+        this.status = REQUEST_STATUS.FAIL;
         this.errors = List.of(error);
     }
 }
